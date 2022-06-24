@@ -1,5 +1,11 @@
+import IndividualInput from "./components/Input/input";
+
 function App() {
-  return <h1>💪</h1>
+  return (
+    <>
+     <IndividualInput placeholder="******" type= "password"  name = "password"/>
+    </>
+  )
 }
 
 export default App;
