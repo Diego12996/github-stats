@@ -1,19 +1,19 @@
 import * as Style from "./styles";
 
-function CardUser() {
+function CardUser({ isFavorite, src, name, username, onClickStar }) {
   return (
     <Style.Container>
       <Style.Info>
         <Style.Avatar 
-          src="https://avatars.githubusercontent.com/u/94902863?v=4"
+          src= {src}
           alt="github-avatar"
         />
         <div>
-          <Style.Name>Enmanuel Chipana</Style.Name>
-          <Style.Username>emachipana</Style.Username>
+          <Style.Name>{name}</Style.Name>
+          { isFavorite && (<Style.Username>{username}</Style.Username>) }
         </div>
       </Style.Info>
-      <Style.Star />
+      { isFavorite && (<Style.Star onClick={onClickStar} />) }
     </Style.Container>
   );
 };
