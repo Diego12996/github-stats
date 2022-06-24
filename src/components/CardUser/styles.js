@@ -15,7 +15,7 @@ export const Container = styled.div`
   font-family: ${fonts.primary};
   align-items: center;
   justify-content: space-between;
-  transition: .3s ease-in;
+  transition: .2s ease-in;
   &:hover {
     transform: translateY(-3px);
   }
@@ -38,7 +38,7 @@ export const Name = styled.h2`
 export const Username = styled.p`
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 15px;
   color: ${colors.gray[800]};
 `;
