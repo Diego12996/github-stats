@@ -1,9 +1,9 @@
-import IndividualInput from "./components/Input/input";
+import TitleHead from "./components/Title";
 
 function App() {
   return (
     <>
-     <IndividualInput placeholder="******" type= "password"  name = "password"/>
+     <TitleHead></TitleHead>
     </>
   )
 }
