@@ -2,18 +2,18 @@ import styled from "@emotion/styled";
 import { colors, typography } from "../../styles";
 
 const InputContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 4px;
-` 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+`; 
 
 const Label = styled.label `
     ${typography.text.md};
     color: ${colors.gray[1]};
     text-transform: capitalize;
 
-`
+`;
 const Input = styled.input `
     ouline: none;
     border: none;
@@ -29,7 +29,7 @@ const Input = styled.input `
         border: 3px solid #2D9CDB;
         outline: none
     }
-`
+`;
 
 export {
     Label,
