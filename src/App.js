@@ -1,9 +1,6 @@
-import Button from "./components/Button";
-
 function App() {
   return (
     <>
-      <Button isPrimary={true}>Login </Button>
     </>
   )
 }
