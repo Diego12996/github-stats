@@ -1,5 +1,11 @@
+import TitleHead from "./components/Title";
+
 function App() {
-  return <h1>💪</h1>
+  return (
+    <>
+     <TitleHead></TitleHead>
+    </>
+  )
 }
 
 export default App;
