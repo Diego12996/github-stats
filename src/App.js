@@ -1,3 +1,5 @@
+
+import Footer from "./components/footer/footer";
 import CardUser from "./components/CardUser";
 import TitleHead from "./components/Title";
 
@@ -15,6 +17,7 @@ function App() {
         src="https://avatars.githubusercontent.com/u/91627176?v=4"
         name="Lucho Zelada"
       />
+      <Footer />
     </>
   )
 }
