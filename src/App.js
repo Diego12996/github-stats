@@ -1,5 +1,7 @@
+import CardUser from "./components/CardUser";
+
 function App() {
-  return <h1>💪</h1>
+  return <CardUser />
 }
 
 export default App;
