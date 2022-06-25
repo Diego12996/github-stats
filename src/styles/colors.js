@@ -79,7 +79,7 @@ export const colors = {
     500: "#14B8A6",
   },
   cyan: {
-    500: "#06B6D4",
+    500: "#2D9CDB",
   },
   lightBlue: {
     500: "#0EA5E9",
