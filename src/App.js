@@ -1,9 +1,8 @@
-import LoginPage from "./pages/login-page";
-import SignupPage from "./pages/signup-page";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 function App() {
   return (
-    <LoginPage />
+    <UnauthenticatedApp />
   )
 }
 
