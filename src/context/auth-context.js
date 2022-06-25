@@ -7,13 +7,14 @@ const AuthContext = createContext();
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     getUser().then(setUser).catch(console.error);
   }, []);
 
   function login(credentials) {
-    auth.login(credentials).then(setUser).catch(console.error);
+    auth.login(credentials).then(setUser).catch((error) => setError(error.message));
   };
 
   function logout() {
@@ -24,13 +25,14 @@ function AuthProvider({ children }) {
   };
 
   function signup(userData) {
-    createUser(userData).then(setUser).catch(console.log);
+    createUser(userData).then(setUser).catch((error) => setError(error.message));
   };
 
   return (
     <AuthContext.Provider
       value={{
         user,
+        error,
         login,
         logout,
         signup
