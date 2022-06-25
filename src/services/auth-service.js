@@ -3,13 +3,14 @@ import githubClient from "./github-client";
 
 // check function maybe converted to promise function
 
-export async function login(credentials) {  
-  const data = await githubClient("/login", { body: credentials });
-  const { token, ...user } = data;
-  sessionStorage.setItem(tokenKey, token);
-  return user;
+export function login(credentials) {  
+  return githubClient("/login", { body: credentials }).then((data) => {
+    const { token, ...user } = data;
+    sessionStorage.setItem(tokenKey, token);
+    return user;
+  })
 }
 
-export async function logout() {
-  return await githubClient("/logout", { method: "DELETE" });
+export function logout() {
+  return githubClient("/logout", { method: "DELETE" });
 }
