@@ -38,7 +38,7 @@ async function githubClient(endpoint, { method, headers, body } = {}) {
     }catch(e) {
       throw new Error(response.statusText);
     }
-    throw new Error(response.statusText);
+    throw new Error(data.errors);
   };
 
   try {
