@@ -1,12 +1,8 @@
-import LoginForm from "./components/LoginForm";
-import TitleHead from "./components/Title";
+import SignupPage from "./pages/signup-page";
 
 function App() {
   return (
-    <>
-      <TitleHead></TitleHead>
-      <LoginForm />
-    </>
+    <SignupPage />
   )
 }
 
