@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FaGithub } from "react-icons/fa"
 
 export const Container = styled.div`
   max-width: 260px;
@@ -55,3 +56,31 @@ export const Cards = styled.div`
   justify-content: center;
   margin: 1rem;
 `;
+
+export const NoUsers = styled.div`
+  color: black;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+`
+
+export const Github = styled(FaGithub)`
+  font-size: 120px;
+`
+
+export const Message = styled.p`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+`
+
+export const NameContainer = styled.div`
+  display: flex; 
+  gap: 5px;
+  align-items: center;
+  font-size: 23px;
+`

@@ -55,3 +55,8 @@ export const Star = styled(BsStarFill)`
   cursor: pointer;
   color: rgba(242, 201, 76, 1);
 `;
+
+export const NameContainer = styled.div`
+  display: flex; 
+  gap: 5px;
+`

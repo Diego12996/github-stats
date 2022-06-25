@@ -3,7 +3,9 @@ import { Input } from "../components/Input/styles";
 import { useDebounce } from "react-haiku";
 import { getUser } from "../services/github-api-service";
 import Card from "../components/CardsProfile/cardsProfile";
+import { AiOutlineStar } from "react-icons/ai";
 import * as Style from "./styles";
+
 
 function SearchPage() {
   const [query, setQuery] = useState("");
@@ -33,7 +35,10 @@ function SearchPage() {
         <>
         <Style.Info>
           <Style.Avatar src={userData.avatar_url} alt="github-avatar" />
-          <Style.Name>{userData.name}</Style.Name>
+          <Style.NameContainer>
+            <Style.Name>{userData.name}</Style.Name>
+            <AiOutlineStar />
+          </Style.NameContainer>
           <Style.Text>{userData.bio}</Style.Text>
         </Style.Info>
         <Style.Cards>
@@ -60,7 +65,10 @@ function SearchPage() {
         </Style.Cards>
         </>
       ) 
-      : "No users..."
+      : (<Style.NoUsers>
+          <Style.Github />
+          <Style.Message>No users...</ Style.Message>
+        </ Style.NoUsers>)        
     }
       
     </Style.UserContainer>
