@@ -6,7 +6,7 @@ import { colors } from "../../styles";
 
 const Icons = {
   followers: <FaUsers color="#2D9CDB" />,
-  followings: <RiUserHeartFill color="#F2994A" />,
+  following: <RiUserHeartFill color="#F2994A" />,
   repos: <RiGitRepositoryFill color="#219653" />,
   gist: <FaFileCode color="#828282" />
 }
@@ -32,9 +32,11 @@ function Card({name, number, icon, onClickCard}) {
       <StyledCard onClick={onClickCard}>
         <Icon >
           { Icons[icon] }
-          { number }
-          { name }
+          {/* { number } */}
+          {/* { name } */}
         </Icon>
+        <p>{number}</p>
+        <p>{name}</p>
       </StyledCard>
   )}
 
