@@ -6,7 +6,7 @@ import { colors } from "../../styles";
 
 const Icons = {
   followers: <FaUsers color="#2D9CDB" />,
-  followings: <RiUserHeartFill color="#F2994A" />,
+  following: <RiUserHeartFill color="#F2994A" />,
   repos: <RiGitRepositoryFill color="#219653" />,
   gist: <FaFileCode color="#828282" />
 }
@@ -17,7 +17,7 @@ const StyledCard = styled.div`
   height: 140px;
   border-radius: 4px;
   box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-  padding: 1rem;
+  padding: 0.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,14 +27,31 @@ const Icon = styled.i`
   font-size: 50px;
 `
 
+const Number = styled.h1`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+`
+
+const Name = styled.p`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+`
+
 function Card({name, number, icon, onClickCard}) {
   return (
       <StyledCard onClick={onClickCard}>
         <Icon >
           { Icons[icon] }
-          { number }
-          { name }
+ 
         </Icon>
+        <Number>{number}</Number>
+        <Name>{name}</Name>
       </StyledCard>
   )}
 
