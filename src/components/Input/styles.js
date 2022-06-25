@@ -15,6 +15,8 @@ const Label = styled.label `
 
 `;
 const Input = styled.input `
+    box-sizing: border-box;
+    width: 100%;
     ouline: none;
     border: none;
     border-radius: 4px;

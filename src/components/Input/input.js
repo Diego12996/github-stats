@@ -1,10 +1,18 @@
 import { Input, InputContainer, Label } from "./styles";
 
-function IndividualInput({placeholder, type,name }) {
+function IndividualInput({placeholder, type, label, required = true}) {
+    const labelParsed = label.toLowerCase().replace(/ /g, "_");
+
     return (
         <InputContainer>
-            <Label htmlFor={name}>{name}</Label>
-            <Input id={name} type={type} placeholder= {placeholder}/>
+            <Label htmlFor={labelParsed}>{label}</Label>
+            <Input 
+              id={labelParsed}
+              type={type}
+              placeholder={placeholder}
+              name={labelParsed}
+              required={required}
+            />
         </InputContainer>
     )
 };
