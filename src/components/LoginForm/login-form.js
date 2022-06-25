@@ -12,9 +12,9 @@ const Form = styled.form`
   gap: 2rem;
 `;
 
-function LoginForm() {
+function LoginForm({ onSubmitForm }) {
   return (
-    <Form>
+    <Form onSubmit={onSubmitForm}>
       <IndividualInput
         label="Email"
         type="email"
