@@ -1,6 +1,8 @@
+
 import CardRepo from "./components/CardRepo/card-repo";
 import CardUser from "./components/CardUser";
 import TitleHead from "./components/Title";
+import LinkTo from "./components/LinkTo";
 
 function App() {
   return (
@@ -25,9 +27,9 @@ function App() {
       />
       <CardRepo 
         language="CSS"
-        name="portfolio"
-          
+        name="portfolio"  
       />
+      <LinkTo to="/" >Hola</LinkTo>
     </>
   )
 }
