@@ -12,6 +12,7 @@ function SearchPage({
   favorites,
   onClickFollowers,
   onClickFollowing,
+  onClickRepos
   }) {
   const [query, setQuery] = useState("");
   const [userData, setUserData] = useState(null);
@@ -65,6 +66,7 @@ function SearchPage({
             icon="repos"
             number={userData.public_repos}
             name="public repos"
+            onClickCard={() => onClickRepos(userData)}
           />
           <Card
             icon="gist"
@@ -79,7 +81,6 @@ function SearchPage({
           <Style.Message>No users...</ Style.Message>
         </ Style.NoUsers>)        
     }
-      
     </>
   )
 }
