@@ -3,14 +3,15 @@ import { Input } from "../components/Input/styles";
 import { useDebounce } from "react-haiku";
 import { getUser } from "../services/github-api-service";
 import Card from "../components/CardsProfile/cardsProfile";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import * as Style from "./styles";
 
-
-function SearchPage() {
+function SearchPage({addFavorite, removeFavorite, favorites}) {
   const [query, setQuery] = useState("");
   const [userData, setUserData] = useState(null);
   const debounceValue = useDebounce(query, 1000);
+
+  const isFavorite = !!(favorites.find((favorite)=> favorite.username === userData?.login))
 
   useEffect(() => {
     getUser(debounceValue).then((data) => {
@@ -23,7 +24,7 @@ function SearchPage() {
 
   return (
     <Style.UserContainer>
-      <Style.Form>
+      <Style.Form onSubmit={(event)=>event.preventDefault()} >
         <Input
           name="query"
           placeholder="username"
@@ -36,8 +37,8 @@ function SearchPage() {
         <Style.Info>
           <Style.Avatar src={userData.avatar_url} alt="github-avatar" />
           <Style.NameContainer>
-            <Style.Name>{userData.name}</Style.Name>
-            <AiOutlineStar />
+            <Style.Name>{userData.name|| userData.login}</Style.Name>
+            { isFavorite? <AiFillStar onClick={()=>removeFavorite(userData)} color= "#F2C94C"/> :<AiOutlineStar onClick={()=>addFavorite(userData)}/> } 
           </Style.NameContainer>
           <Style.Text>{userData.bio}</Style.Text>
         </Style.Info>

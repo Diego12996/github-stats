@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import IndividualInput from "../components/Input";
 import LinkTo from "../components/LinkTo";
 import TitleHead from "../components/Title";
 import { useAuth } from "../context/auth-context";
 import * as Style from "./styles";
+
 
 function SignupPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +15,8 @@ function SignupPage() {
     first_name: "",
     last_name: ""
   })
+
+  const navigate = useNavigate();
 
   const { signup, error } = useAuth();
 
@@ -25,6 +29,7 @@ function SignupPage() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    navigate("/search");
     signup(formData);
   }
 
