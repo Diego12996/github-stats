@@ -83,4 +83,5 @@ export const NameContainer = styled.div`
   gap: 5px;
   align-items: center;
   font-size: 23px;
+  cursor: pointer;
 `
