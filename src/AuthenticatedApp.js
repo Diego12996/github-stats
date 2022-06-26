@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer";
 import FollowersPage from "./pages/followers-page";
 import FollowingPage from "./pages/following-page";
 import ReposPage from "./pages/repos-page";
+import FavoritesPage from "./pages/favorites-page";
 import SearchPage from "./pages/search-page";
 import { Container } from "./pages/styles";
 import { createFavorite, getFavorites, removeFavorite } from "./services/favorites-service";
@@ -84,7 +85,7 @@ function AuthenticatedApp() {
         <Route path="/following" element= {<FollowingPage following={following}/>} />
         <Route path="/followers" element= {<FollowersPage followers={followers}/>} />
         <Route path="/repos" element= {<ReposPage repos={repos}/>} />
-        <Route path="/favorites" element= {<h1>favorites</h1>} />
+        <Route path="/favorites" element= {<FavoritesPage favorites= {favorites} removeFavorite={handleRemoveFavorite} />} />
         <Route path="/profile" element= {<h1>profile</h1>} />
       </Routes>
       <Footer/>
