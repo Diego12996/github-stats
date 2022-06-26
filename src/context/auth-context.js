@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { tokenKey } from "../config";
 import * as auth from "../services/auth-service";
 import { getUser, createUser, updateUser } from "../services/user-service";
@@ -9,6 +10,7 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getUser().then((u) => {
@@ -25,7 +27,10 @@ function AuthProvider({ children }) {
   }, []);
 
   function login(credentials) {
-    auth.login(credentials).then(setUser).catch((error) => setError(error.message));
+    auth.login(credentials).then((data) => {
+      setUser(data);
+      navigate("/search")
+    }).catch((error) => setError(error.message));
   };
 
   function logout() {
@@ -36,7 +41,10 @@ function AuthProvider({ children }) {
   };
 
   function signup(userData) {
-    createUser(userData).then(setUser).catch((error) => setError(error.message));
+    createUser(userData).then((data) => {
+      setUser(data);
+      navigate("/search")
+    }).catch((error) => setError(error.message));
   };
 
   function update(userData) {

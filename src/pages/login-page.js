@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import IndividualInput from "../components/Input";
 import LinkTo from "../components/LinkTo";
@@ -13,8 +12,6 @@ function LoginPage() {
     password: ""
   });
 
-  const navigate = useNavigate();
-
   const { login, error } = useAuth();
 
   const { email, password } = formData;
@@ -26,7 +23,6 @@ function LoginPage() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/search")
     login(formData);
   }
 

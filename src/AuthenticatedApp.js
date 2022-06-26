@@ -88,6 +88,7 @@ function AuthenticatedApp() {
         <Route path="/repos" element= {<ReposPage repos={repos}/>} />
         <Route path="/favorites" element= {<FavoritesPage favorites= {favorites} removeFavorite={handleRemoveFavorite} />} />
         <Route path="/profile" element= {<ProfilePage/>}/>
+        <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
       <Footer/>
     </Container>
