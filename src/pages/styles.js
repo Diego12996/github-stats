@@ -2,12 +2,7 @@ import styled from "@emotion/styled";
 import { FaGithub } from "react-icons/fa"
 
 export const Container = styled.div`
-  max-width: 260px;
-  margin: 1rem auto;
-`;
-
-export const UserContainer = styled.div`
-  max-width: 360px;
+  max-width: 400px;
   margin: 1rem auto;
 `;
 
