@@ -1,18 +1,17 @@
 import styled from "@emotion/styled";
 import CardUser from "../components/CardUser";
-import TitleHead from "../components/Title/title";
 
 const WrapperFavorites = styled.div `
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 1rem;
 `
 function FavoritesPage({favorites, removeFavorite}) {
-    
     return (
         <>
-            <TitleHead>Favorites ({favorites.length})</TitleHead>
-                <h2>  1 </h2>
+            <h1>Favorites ({favorites.length})</h1>
             <WrapperFavorites>
                 {favorites.map((fav)=>( 
                     <CardUser 
