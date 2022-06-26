@@ -3,7 +3,7 @@ import CardUser from "../components/CardUser";
 function FollowersPage({ followers }) {
   return (
     <>
-    <h1>Followers ({followers.size})</h1>
+    <h1>{`Followers (${followers.length})` }</h1>
     { followers.map((foll) => (
       <CardUser 
         key={foll.id}
