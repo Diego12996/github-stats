@@ -23,7 +23,7 @@ function SearchPage({addFavorite, removeFavorite, favorites}) {
   }, [debounceValue]);
 
   return (
-    <Style.UserContainer>
+      <>
       <Style.Form onSubmit={(event)=>event.preventDefault()} >
         <Input
           name="query"
@@ -72,7 +72,7 @@ function SearchPage({addFavorite, removeFavorite, favorites}) {
         </ Style.NoUsers>)        
     }
       
-    </Style.UserContainer>
+    </>
   )
 }
 
