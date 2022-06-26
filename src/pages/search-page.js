@@ -6,7 +6,14 @@ import Card from "../components/CardsProfile/cardsProfile";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import * as Style from "./styles";
 
-function SearchPage({addFavorite, removeFavorite, favorites}) {
+function SearchPage({
+  addFavorite,
+  removeFavorite,
+  favorites,
+  onClickFollowers,
+  onClickFollowing,
+  onClickRepos
+  }) {
   const [query, setQuery] = useState("");
   const [userData, setUserData] = useState(null);
   const debounceValue = useDebounce(query, 1000);
@@ -23,7 +30,7 @@ function SearchPage({addFavorite, removeFavorite, favorites}) {
   }, [debounceValue]);
 
   return (
-    <Style.UserContainer>
+      <>
       <Style.Form onSubmit={(event)=>event.preventDefault()} >
         <Input
           name="query"
@@ -47,16 +54,19 @@ function SearchPage({addFavorite, removeFavorite, favorites}) {
             icon="followers"
             number={userData.followers}
             name="followers"
+            onClickCard={() => onClickFollowers(userData)}
           />
           <Card
             icon="following"
             number={userData.following}
             name="following"
+            onClickCard={() => onClickFollowing(userData)}
           />
           <Card
             icon="repos"
             number={userData.public_repos}
             name="public repos"
+            onClickCard={() => onClickRepos(userData)}
           />
           <Card
             icon="gist"
@@ -71,8 +81,7 @@ function SearchPage({addFavorite, removeFavorite, favorites}) {
           <Style.Message>No users...</ Style.Message>
         </ Style.NoUsers>)        
     }
-      
-    </Style.UserContainer>
+    </>
   )
 }
 

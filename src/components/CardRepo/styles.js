@@ -5,12 +5,10 @@ import { AiOutlineStar } from "react-icons/ai";
 import { BiGitRepoForked } from "react-icons/bi";
 
 export const Container = styled.div`
-  width: 300px;
-  height: 89px;
+  width: 320px;
   box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   background-color: white;
-  margin: 1rem;
   transition: .2s ease-in;
   padding: 8px 12px;
   gap: 0.2rem;

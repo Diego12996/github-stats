@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { FaUsers } from "react-icons/fa";
 import { RiUserHeartFill, RiGitRepositoryFill } from "react-icons/ri";
 import { FaFileCode } from "react-icons/fa";
-import { colors } from "../../styles";
 
 const Icons = {
   followers: <FaUsers color="#2D9CDB" />,
@@ -21,6 +20,7 @@ const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 `
 
 const Icon = styled.i`
