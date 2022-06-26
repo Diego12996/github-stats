@@ -37,6 +37,7 @@ function AuthProvider({ children }) {
     auth.logout().then(() => {
       sessionStorage.removeItem(tokenKey);
       setUser(null);
+      navigate("/");
     });
   };
 
