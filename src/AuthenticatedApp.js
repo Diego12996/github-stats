@@ -3,10 +3,11 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import FollowersPage from "./pages/followers-page";
 import FollowingPage from "./pages/following-page";
+import ReposPage from "./pages/repos-page";
 import SearchPage from "./pages/search-page";
 import { Container } from "./pages/styles";
 import { createFavorite, getFavorites, removeFavorite } from "./services/favorites-service";
-import { getFollowers, getFollowings } from "./services/github-api-service";
+import { getFollowers, getFollowings, getRepos } from "./services/github-api-service";
 
 function AuthenticatedApp() {
 
@@ -28,17 +29,23 @@ function AuthenticatedApp() {
 
   function handleGetFollowers(userData) {
     getFollowers(userData.followers_url).then((data) => {
-      setExternal({ ...external, followers: data })
-
+      setExternal({ ...external, followers: data });
     }).catch(console.error);
     navigate("/followers");
   }
 
   function handleGetFollowing(userData) {
     getFollowings(userData.following_url).then((data) => {
-      setExternal({ ...external, following: data })
+      setExternal({ ...external, following: data });
     }).catch(console.error);
-    navigate("/following")
+    navigate("/following");
+  }
+
+  function handleGetRepos(userData) {
+    getRepos(userData.repos_url).then((data) => {
+      setExternal({ ...external, repos: data });
+    }).catch(console.error);
+    navigate("/repos");
   }
 
   function handleAddFavorite(user) {
@@ -71,11 +78,12 @@ function AuthenticatedApp() {
               favorites={favorites}
               onClickFollowers={handleGetFollowers}
               onClickFollowing={handleGetFollowing}
+              onClickRepos={handleGetRepos}
           />
         }/>
         <Route path="/following" element= {<FollowingPage following={following}/>} />
         <Route path="/followers" element= {<FollowersPage followers={followers}/>} />
-        <Route path="/repos" element= {<h1>repos</h1>} />
+        <Route path="/repos" element= {<ReposPage repos={repos}/>} />
         <Route path="/favorites" element= {<h1>favorites</h1>} />
         <Route path="/profile" element= {<h1>profile</h1>} />
       </Routes>
