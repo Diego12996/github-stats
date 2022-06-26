@@ -9,6 +9,7 @@ import SearchPage from "./pages/search-page";
 import { Container } from "./pages/styles";
 import { createFavorite, getFavorites, removeFavorite } from "./services/favorites-service";
 import { getFollowers, getFollowings, getRepos } from "./services/github-api-service";
+import ProfilePage from "./pages/profile-page";
 
 function AuthenticatedApp() {
 
@@ -86,7 +87,7 @@ function AuthenticatedApp() {
         <Route path="/followers" element= {<FollowersPage followers={followers}/>} />
         <Route path="/repos" element= {<ReposPage repos={repos}/>} />
         <Route path="/favorites" element= {<FavoritesPage favorites= {favorites} removeFavorite={handleRemoveFavorite} />} />
-        <Route path="/profile" element= {<h1>profile</h1>} />
+        <Route path="/profile" element= {<ProfilePage/>}/>
       </Routes>
       <Footer/>
     </Container>

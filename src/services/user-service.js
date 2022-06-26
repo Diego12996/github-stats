@@ -15,3 +15,11 @@ export function getUser() {
     return user;
   })
 };
+
+export function updateUser(userData) {
+  return githubClient("/profile", { body: userData , method: "PATCH"}).then((data) => {
+    const { token, ...user } = data;
+    sessionStorage.setItem(tokenKey, token);
+    return user;
+  })
+};
