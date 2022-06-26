@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/footer";
+import FavoritesPage from "./pages/favorites-page";
 import SearchPage from "./pages/search-page";
 import { createFavorite, getFavorites, removeFavorite } from "./services/favorites-service";
 
@@ -46,7 +47,7 @@ function AuthenticatedApp() {
       <Route path="/followings" element= {<h1>Followings</h1>} />
       <Route path="/followers" element= {<h1>Followers</h1>} />
       <Route path="/repos" element= {<h1>repos</h1>} />
-      <Route path="/favorites" element= {<h1>favorites</h1>} />
+      <Route path="/favorites" element= {<FavoritesPage favorites= {favorites} removeFavorite={handleRemoveFavorite} />} />
     </Routes>
     <Footer/>
     </>

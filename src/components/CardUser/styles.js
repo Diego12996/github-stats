@@ -3,7 +3,6 @@ import { colors, fonts } from "../../styles";
 import { BsStarFill } from "react-icons/bs";
 
 export const Container = styled.div`
-  margin: 1rem;
   width: 300px;
   height: 56px;
   background-color: white;
