@@ -6,7 +6,13 @@ import Card from "../components/CardsProfile/cardsProfile";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import * as Style from "./styles";
 
-function SearchPage({addFavorite, removeFavorite, favorites, onClickFollowers}) {
+function SearchPage({
+  addFavorite,
+  removeFavorite,
+  favorites,
+  onClickFollowers,
+  onClickFollowing,
+  }) {
   const [query, setQuery] = useState("");
   const [userData, setUserData] = useState(null);
   const debounceValue = useDebounce(query, 1000);
@@ -53,6 +59,7 @@ function SearchPage({addFavorite, removeFavorite, favorites, onClickFollowers}) 
             icon="following"
             number={userData.following}
             name="following"
+            onClickCard={() => onClickFollowing(userData)}
           />
           <Card
             icon="repos"
